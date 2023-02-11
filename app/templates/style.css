@@ -1,5 +1,16 @@
+.topnav{
+    padding: 25px;
+    margin: 0 auto;
+    text-align: center;
+}
+
 .topnav ul li {
     list-style: none;
-    margin: 0 10px;
+    margin: 0 15px;
     display: inline-block;
+  }
+
+  .container ul li a:hover {
+    padding: 12px;
+    color: grey;
   }
