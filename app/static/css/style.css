@@ -2,20 +2,39 @@
   font-family: 'Courier New', Courier, monospace;
 }
 
+body {
+  margin: 25px;
+  background-color: #E0FFFF;
+}
+
+.Welcome {
+  font-size: 84px;
+  font-family: 'Libre Baskerville', serif;
+}
+
+.landing {
+  display: flex;
+  background-color: #B0E0E6;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .topnav{
   padding: 25px;
+  border-radius: 15px;
   margin: 0 auto;
   text-align: center;
-  background-color: grey;
+  background-color:#6495ED;
 }
 
 .topnav ul li {
   margin: 0 15px;
   display: inline-block;
+  font-size: 30px;
 }
 
 .topnav ul li a:hover {
-  background-color: lightslategray;
+  background-color: #00CED1;
 }
 .topnav ul li a {
   margin: 8px;
@@ -26,11 +45,8 @@
   transition: all 0.3s ease-out;
 }
 
-
 #abt{
-  background: url(https://c0.wallpaperflare.com/preview/360/533/202/health-medical-healthcare-health.jpg) no-repeat left;
   background-size: 55%;
-  background-color: white;
   overflow: hidden;
   padding:100px 0;
 }
@@ -38,7 +54,6 @@
 .inner-container{
   width: 55%;
   float: right;
-  background-color: #fdfdfd;
   padding: 150px;
 }
 
@@ -62,5 +77,3 @@
   font-weight: 700;
   font-size: 13px;
 }
-
-
