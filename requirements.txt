@@ -1,3 +1,4 @@
 flask==2.2.2
 flask-restful==0.3.9
 flask-login==0.6.2
+boto3==1.26.69
