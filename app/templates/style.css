@@ -1,24 +1,66 @@
+ * {
+  font-family: 'Courier New', Courier, monospace;
+}
+
 .topnav{
-    padding: 25px;
-    margin: 0 auto;
-    text-align: center;
-    background-color: grey;
+  padding: 25px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: grey;
 }
 
 .topnav ul li {
-    list-style: none;
-    margin: 0 15px;
-    display: inline-block;
-  }
+  margin: 0 15px;
+  display: inline-block;
+}
 
-  .topnav ul li a:hover {
-    background-color: lightslategray;
-  }
-  .topnav ul li a {
-    margin: 8px;
-    padding: 10px;
-    color: black;
-    font-size: 1.2em;
-    text-decoration: none;
-    transition: all 0.3s ease-out;
-  }
+.topnav ul li a:hover {
+  background-color: lightslategray;
+}
+.topnav ul li a {
+  margin: 8px;
+  padding: 10px;
+  color: black;
+  font-size: 1.2em;
+  text-decoration: none;
+  transition: all 0.3s ease-out;
+}
+
+
+#abt{
+  background: url(https://c0.wallpaperflare.com/preview/360/533/202/health-medical-healthcare-health.jpg) no-repeat left;
+  background-size: 55%;
+  background-color: white;
+  overflow: hidden;
+  padding:100px 0;
+}
+
+.inner-container{
+  width: 55%;
+  float: right;
+  background-color: #fdfdfd;
+  padding: 150px;
+}
+
+.inner-container h1{
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.text{
+  font-size: 13px;
+  color: #545454;
+  line-height: 30px;
+  text-align: justify;
+  margin-bottom: 40px;
+}
+
+.skills{
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+
