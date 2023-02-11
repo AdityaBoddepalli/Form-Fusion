@@ -1,79 +1,108 @@
- * {
-  font-family: 'Courier New', Courier, monospace;
+* {
+ font-family: 'Courier New', Courier, monospace;
 }
 
 body {
-  margin: 25px;
-  background-color: #E0FFFF;
+ margin: 25px;
+ background-color:#F0F8FF;
 }
 
-.Welcome {
-  font-size: 84px;
-  font-family: 'Libre Baskerville', serif;
+.welcome {
+ margin-right: 250px;
+ margin-bottom: -20px;
+ font-weight: normal;
+ font-size: 70px;
+ padding: 15px;
+ font-family: 'Oswald', sans-serif;
+ border-bottom: -30px;
+}
+
+.welcome p {
+ margin-top: -5px;
+ font-size: 100px;
+ font-family: 'Oswald', sans-serif;
+ color: #FFFFFF;
+ font-weight: normal;
+
+ animation: color-change 7s infinite;
+}
+
+@keyframes color-change {
+  0% { color:#B0B0B0;}
+  25% { color: #1E90FF;}
+  50% { color: #191970;}
+  75% { color: #1E90FF;}
+  100% { color: #B0B0B0;}
 }
 
 .landing {
-  display: flex;
-  background-color: #B0E0E6;
-  justify-content: space-between;
-  align-items: center;
+ display: flex;
+ justify-content: center;
+ background-color: #B0E0E6;
+ align-items: center;
+ border-radius: 15px;
+
 }
 
 .topnav{
-  padding: 25px;
-  border-radius: 15px;
-  margin: 0 auto;
-  text-align: center;
-  background-color:#6495ED;
+ float: right;
+ border-radius: 15px;
+ margin: 0 auto;
+ text-align: center;
+ background-color: #87CEFA;
 }
 
 .topnav ul li {
-  margin: 0 15px;
-  display: inline-block;
-  font-size: 30px;
+ margin: 0 15px;
+ display: inline-block;
+ font-size: 30px;
 }
 
 .topnav ul li a:hover {
-  background-color: #00CED1;
+ background-color: #00CED1;
 }
 .topnav ul li a {
-  margin: 8px;
-  padding: 10px;
-  color: black;
-  font-size: 1.2em;
-  text-decoration: none;
-  transition: all 0.3s ease-out;
+ margin: 8px;
+ padding: 10px;
+ color: black;
+ font-size: 1.2em;
+ text-decoration: none;
+ transition: all 0.3s ease-out;
 }
 
 #abt{
-  background-size: 55%;
-  overflow: hidden;
-  padding:100px 0;
+ background-size: 55%;
+ overflow: hidden;
+ padding:100px 0;
 }
 
 .inner-container{
-  width: 55%;
-  float: right;
-  padding: 150px;
+ width: 55%;
+ float: right;
+ padding: 150px;
 }
 
 .inner-container h1{
-  margin-bottom: 30px;
-  font-size: 30px;
-  font-weight: 900;
+ margin-bottom: 30px;
+ font-size: 30px;
+ font-weight: 900;
 }
 
 .text{
-  font-size: 13px;
-  color: #545454;
-  line-height: 30px;
-  text-align: justify;
-  margin-bottom: 40px;
+ font-size: 13px;
+ color: #545454;
+ line-height: 30px;
+ text-align: justify;
+ margin-bottom: 40px;
 }
 
 .skills{
-  display: flex;
-  justify-content: space-between;
-  font-weight: 700;
-  font-size: 13px;
+ display: flex;
+ justify-content: space-between;
+ font-weight: 700;
+ font-size: 13px;
 }
+
+
+
+
