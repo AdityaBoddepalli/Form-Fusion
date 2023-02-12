@@ -29,9 +29,19 @@ def form_handler():
 
         selected_joints = []
         for k, v in request.args.items():
-            selected_joints.append(int(k))
+            selected_joints.append(k)
 
-        response = requests.post(url, json={'numbers': selected_joints})
+        new_list = selected_joints[2:]
+
+        newer_list = []
+
+        for i in new_list:
+            newer_list.append(int(i))
+
+        
+        print(new_list)
+
+        response = requests.post(url, json={'numbers': new_list})
         print(selected_joints)
         print(response.status_code)
         assert response.status_code == 200
