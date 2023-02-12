@@ -8,7 +8,7 @@ html {
 
 body {
   margin: 0px;
-  background-color:#F0F8FF;
+  background-color:#c0c0c0;
 }
 
 #logo {
@@ -32,24 +32,23 @@ body {
   color: #FFFFFF;
   font-weight: normal;
   
-  animation: color-change 7s infinite;
+  animation: color-change 10s infinite;
 }
 
 @keyframes color-change {
-  0% { color:#B0B0B0;}
-  25% { color: #1E90FF;}
-  50% { color: #191970;}
-  75% { color: #1E90FF;}
-  100% { color: #B0B0B0;}
+  0% { color:#1786cb;}
+  25% { color: #EF7509;}
+  50% { color: #A29FD3;}
+  75% { color: #EF7509;}
+  100% { color: #1786cb;}
 }
 
 .landing {
   display: flex;
   justify-content: center;
-  background-color: #B0E0E6;
+  /*background-color: #B0E0E6;*/
+  background: linear-gradient(to right, #4C4C4C, #999, #4C4C4C);
   align-items: center;
-  border-radius: 15px;
-  
 }
 
 .topnav{
@@ -57,13 +56,14 @@ body {
   border-radius: 15px;
   margin: 0 auto;
   text-align: center;
-  background-image: linear-gradient(to bottom right, #87CEFA, #60c1da);
+  background-image: linear-gradient(to bottom right, #1786cb, #3bb1cf);
 }
 
 .topnav ul li {
   margin: 0 15px;
   display: inline-block;
   font-size: 30px;
+  font-family: 'Oswald', sans-serif;
 }
 
 .topnav ul li a:hover {
@@ -118,6 +118,7 @@ body {
 .video-box {
   width: 45%;
   text-align: center;
+  font-size: larger;
 }
 
 .video-title {
@@ -126,6 +127,8 @@ body {
 
 video {
   width: 100%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 
