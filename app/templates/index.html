@@ -22,109 +22,134 @@
                     <li><a href="#image">Home</a></li>
                     <li><a href="#abt">About</a></li>
                     <li><a href="#upload">Upload</a>
-                </ul>
-            </div>
-        </nav>
-    </div>
-    <div class="container">
-        <div id="abt">
-            <div class="inner-container">
-                <h1>About Us</h1>
-                <p class="text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus velit ducimus, enim inventore earum, eligendi nostrum pariatur necessitatibus eius dicta a voluptates sit deleniti autem error eos totam nisi neque voluptates sit deleniti autem error eos totam nisi neque.
-                </p>
-            </div>
-        </div>
-        
-        <div id="upload">
-            <div class="tryit">
-                <h1>
-                    Try It
-                </h1>
-            </div>
-            
-            <div class="video-container">
-                <div class="video-box">
-                    <h3 class="video-title">You</h3>
-                    <video id="client" controls></video>
-                    
-                    <form>
-                        <label for="video-file">Select a video file:</label>
-                        <input type="file" id="video-file" accept="video/*">
-                        <input type="checkbox" id="joint1" name="shoulderLeft" value="shoulderLeft">
-                        <label for="joint1"> Left Shoulder</label><br>
-                        <input type="checkbox" id="joint2" name="shoulderRight" value="shoulderRight">
-                        <label for="joint2"> Right Shoulder</label><br>
-                        <input type="checkbox" id="joint3" name="ElbowLeft" value="ElbowLeft">
-                        <label for="joint3"> Left Elbow</label><br>
-                        <input type="checkbox" id="joint4" name="ElbowRight" value="ElbowRight">
-                        <label for="joint4"> Right Elbow</label><br>
-                        <input type="checkbox" id="joint5" name="HipLeft" value="HipLeft">
-                        <label for="joint5"> Left Hip</label><br>
-                        <input type="checkbox" id="joint6" name="HipRight" value="HipRight">
-                        <label for="joint6"> Right Hip</label><br>
-                        <input type="checkbox" id="joint7" name="KneeLeft" value="KneeLeft">
-                        <label for="joint7"> Left Knee</label><br>
-                        <input type="checkbox" id="joint8" name="KneeRight" value="KneeRight">
-                        <label for="joint8"> Right Knee</label><br>
-                        <input type="checkbox" id="joint9" name="AnkleLeft" value="AnkleLeft">
-                        <label for="joint9"> Left Ankle</label><br>
-                        <input type="checkbox" id="joint10" name="AnkleRight" value="AnkleRight">
-                        <label for="joint10"> Right Ankle</label><br><br>
-                        <input type="submit" value="Submit">
-                    </form>
-                    
-                    <script>
-                        const input = document.querySelector('#video-file');
-                        const cl_vid = document.querySelector('#client');
-                        
-                        input.addEventListener('change', () => {
-                            const file = input.files[0];
-                            const url = URL.createObjectURL(file);
-                            cl_vid.src = url;
-                        });
-                    </script>
+                    </ul>
                 </div>
-                <div class="video-box">
-                    <h3 class="video-title">Instructor</h3>
-                    <video id="instructor" controls></video>
-                    
-                    <form>
-                        <label for="video-select">Select a video:</label>
-                        <select id="video-select">
-                            <option value="video1.mp4">Video 1</option>
-                            <option value="video2.mp4">Video 2</option>
-                            <option value="video3.mp4">Video 3</option>
-                        </select>
-                    </form>
-                    
-                    <script>
-                        const select = document.querySelector('#video-select');
-                        const i_vid = document.querySelector('#instructor');
-                        
-                        select.addEventListener('change', () => {
-                            i_vid.src = select.value;
-                        });
-                    </script>
-                    
+            </nav>
+        </div>
+        <div class="container">
+            <div id="abt">
+                <div class="inner-container">
+                    <h1>About Us</h1>
+                    <p class="text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus velit ducimus, enim inventore earum, eligendi nostrum pariatur necessitatibus eius dicta a voluptates sit deleniti autem error eos totam nisi neque voluptates sit deleniti autem error eos totam nisi neque.
+                    </p>
                 </div>
             </div>
             
-        </div>
-        <div id="explanation">
-            <div class="basic-wide-container">
-                <h1><u>Explanation</u></h1>
-                <p class="explanation">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus velit ducimus, enim inventore earum, eligendi nostrum pariatur necessitatibus eius dicta a voluptates sit deleniti autem error eos totam nisi neque voluptates sit deleniti autem error eos totam nisi neque.
-                </p>
+            <div id="upload">
+                <div class="tryit">
+                    <h1>
+                        Try It
+                    </h1>
+                </div>
+                
+                <div class="video-container">
+                    <div class="video-box">
+                        <h3 class="video-title">You</h3>
+                        <video id="client" controls></video>
+                        
+                        <button id="popup-button">Open Pop-up</button>
+                        <div id="popup" style="display: none;">
+                            <div id="popup-content">
+                                <span id="close-button">&times;</span>
+                                <form action="">
+                                    <input type="file" accept="video/*">
+                                    <br><br>
+                                    <input type="checkbox" id="joint1" name="shoulderLeft" value="shoulderLeft">
+                                    <label for="joint1"> Left Shoulder</label><br>
+                                    <input type="checkbox" id="joint2" name="shoulderRight" value="shoulderRight">
+                                    <label for="joint2"> Right Shoulder</label><br>
+                                    <input type="checkbox" id="joint3" name="ElbowLeft" value="ElbowLeft">
+                                    <label for="joint3"> Left Elbow</label><br>
+                                    <input type="checkbox" id="joint4" name="ElbowRight" value="ElbowRight">
+                                    <label for="joint4"> Right Elbow</label><br>
+                                    <input type="checkbox" id="joint5" name="HipLeft" value="HipLeft">
+                                    <label for="joint5"> Left Hip</label><br>
+                                    <input type="checkbox" id="joint6" name="HipRight" value="HipRight">
+                                    <label for="joint6"> Right Hip</label><br>
+                                    <input type="checkbox" id="joint7" name="KneeLeft" value="KneeLeft">
+                                    <label for="joint7"> Left Knee</label><br>
+                                    <input type="checkbox" id="joint8" name="KneeRight" value="KneeRight">
+                                    <label for="joint8"> Right Knee</label><br>
+                                    <input type="checkbox" id="joint9" name="AnkleLeft" value="AnkleLeft">
+                                    <label for="joint9"> Left Ankle</label><br>
+                                    <input type="checkbox" id="joint10" name="AnkleRight" value="AnkleRight">
+                                    <label for="joint10"> Right Ankle</label><br>
+                                    <input type="submit" value="Upload Video">
+                                </form>
+                            </div>
+                        </div>
+                        <script>
+                            const input = document.querySelector('#video-file');
+                            const cl_vid = document.querySelector('#client');
+                            
+                            input.addEventListener('change', () => {
+                                const file = input.files[0];
+                                const url = URL.createObjectURL(file);
+                                cl_vid.src = url;
+                            });
+                        </script>
+                    </div>
+                    <div class="video-box">
+                        <h3 class="video-title">Instructor</h3>
+                        <video id="instructor" controls></video>
+                        
+                        <form>
+                            <label for="video-select">Select a video:</label>
+                            <select id="video-select">
+                                <option value="video1.mp4">Video 1</option>
+                                <option value="video2.mp4">Video 2</option>
+                                <option value="video3.mp4">Video 3</option>
+                            </select>
+                        </form>
+                        
+                        <script>
+                            const select = document.querySelector('#video-select');
+                            const i_vid = document.querySelector('#instructor');
+                            
+                            select.addEventListener('change', () => {
+                                i_vid.src = select.value;
+                            });
+                        </script>
+                        
+                    </div>
+                </div>
+                
+            </div>
+            <div id="explanation">
+                <div class="basic-wide-container">
+                    <h1><u>Explanation</u></h1>
+                    <p class="explanation">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus velit ducimus, enim inventore earum, eligendi nostrum pariatur necessitatibus eius dicta a voluptates sit deleniti autem error eos totam nisi neque voluptates sit deleniti autem error eos totam nisi neque.
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="social-bar">
-        <a href="https://www.instagram.com/"><img src="../static/images/images.jpeg" width="50" height="50"></a>
-        <a href="https://www.facebook.com/"><img src="../static/images/download.png" width="50" height="50"></a>
-        <a href="https://twitter.com/"><img src="../static/images/download (1).png" width="50" height="50"></a>
-        <a href="https://youtube.com/"><img src="../static/images/download (2).png" width="50" height="50"></a>
-    </div>
-</body>
-</html>
+        <div class="social-bar">
+            <a href="https://www.instagram.com/"><img src="../static/images/images.jpeg" width="50" height="50"></a>
+            <a href="https://www.facebook.com/"><img src="../static/images/download.png" width="50" height="50"></a>
+            <a href="https://twitter.com/"><img src="../static/images/download (1).png" width="50" height="50"></a>
+            <a href="https://youtube.com/"><img src="../static/images/download (2).png" width="50" height="550"></a>
+        </div>
+        <script>
+            const popupButton = document.getElementById("popup-button");
+            const popup = document.getElementById("popup");
+            const closeButton = document.getElementById("close-button");
+            
+            popupButton.addEventListener("click", () => {
+                popup.style.display = "block";
+            });
+            
+            closeButton.addEventListener("click", () => {
+                popup.style.display = "none";
+            });
+            
+            window.addEventListener("click", (event) => {
+                if (event.target === popup) {
+                    popup.style.display = "none";
+                }
+            });
+        </script>
+    </body>
+    </html>
+    
