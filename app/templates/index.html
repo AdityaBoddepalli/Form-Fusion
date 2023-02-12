@@ -52,7 +52,7 @@
                     <div class="video-box">
                         <h3 class="video-title">You</h3>
                         <video id="client" controls></video>   
-                        <button id="popup-button">Open Pop-up</button>
+                        <button id="popup-button">upload videos</button>
                         <div id="popup" style="display: none;">
                             <div id="popup-content">
                                 <span id="close-button">&times;</span>
@@ -118,25 +118,6 @@
                     <div class="video-box">
                         <h3 class="video-title">Instructor</h3>
                         <video id="instructor" controls></video>
-                        
-                        <form>
-                            <label for="video-select">Select a video:</label>
-                            <select id="video-select">
-                                <option value="video1.mp4">Video 1</option>
-                                <option value="video2.mp4">Video 2</option>
-                                <option value="video3.mp4">Video 3</option>
-                            </select>
-                        </form>
-                        
-                        <script>
-                            const select = document.querySelector('#video-select');
-                            const i_vid = document.querySelector('#instructor');
-                            
-                            select.addEventListener('change', () => {
-                                i_vid.src = select.value;
-                            });
-                        </script>
-                        
                     </div>
                 </div>
                 
@@ -145,7 +126,9 @@
                 <div class="basic-wide-container">
                     <h1><u>Explanation</u></h1>
                     <p class="explanation">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus velit ducimus, enim inventore earum, eligendi nostrum pariatur necessitatibus eius dicta a voluptates sit deleniti autem error eos totam nisi neque voluptates sit deleniti autem error eos totam nisi neque.
+                        To use the software you will need to upload a user video and an instuctor video. Then you will want to select at least one focal point to call the software give feedback about. 
+                        How it works, on the backend the machine learning algorithm identifies the focal points located on the human body and then analyzes the angles between each focal point.
+                        It then compares the angles on the client with the angles on the instructor and relays differences it finds back to the web app.
                     </p>
                 </div>
             </div>
