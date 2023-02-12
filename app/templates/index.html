@@ -25,68 +25,71 @@
             </div>
         </nav>
     </div>
-    <div id="abt">
-        <div class="inner-container">
-            <h1>About Us</h1>
-            <p class="text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus velit ducimus, enim inventore earum, eligendi nostrum pariatur necessitatibus eius dicta a voluptates sit deleniti autem error eos totam nisi neque voluptates sit deleniti autem error eos totam nisi neque.
-            </p>
+    <div class="container">
+        <div class="abt">
+            <div class="inner-container">
+                <h1>About Us</h1>
+                <p class="text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus velit ducimus, enim inventore earum, eligendi nostrum pariatur necessitatibus eius dicta a voluptates sit deleniti autem error eos totam nisi neque voluptates sit deleniti autem error eos totam nisi neque.
+                </p>
+            </div>
+        </div>
+        
+        <div class="upload">
+            <div class="tryit">
+                <h1>
+                    Try It
+                </h1>
+            </div>
+            
+            <div class="video-container">
+                <div class="video-box">
+                    <h3 class="video-title">You</h3>
+                    <video id="client" controls></video>
+                    
+                    <form>
+                        <label for="video-file">Select a video file:</label>
+                        <input type="file" id="video-file" accept="video/*">
+                    </form>
+                    
+                    <script>
+                        const input = document.querySelector('#video-file');
+                        const cl_vid = document.querySelector('#client');
+                        
+                        input.addEventListener('change', () => {
+                            const file = input.files[0];
+                            const url = URL.createObjectURL(file);
+                            cl_vid.src = url;
+                        });
+                    </script>
+                </div>
+                <div class="video-box">
+                    <h3 class="video-title">Instructor</h3>
+                    <video id="instructor" controls></video>
+                    
+                    <form>
+                        <label for="video-select">Select a video:</label>
+                        <select id="video-select">
+                            <option value="video1.mp4">Video 1</option>
+                            <option value="video2.mp4">Video 2</option>
+                            <option value="video3.mp4">Video 3</option>
+                        </select>
+                    </form>
+                    
+                    <script>
+                        const select = document.querySelector('#video-select');
+                        const i_vid = document.querySelector('#instructor');
+                        
+                        select.addEventListener('change', () => {
+                            i_vid.src = select.value;
+                        });
+                    </script>
+                    
+                </div>
+            </div>
+            
         </div>
     </div>
-    
-    <div id="tryit">
-        <h1>
-            Try It
-        </h1>
-    </div>
-    
-    <div class="video-container">
-        <div class="video-box">
-            <h3 class="video-title">You</h3>
-            <video id="client" controls></video>
-            
-            <form>
-                <label for="video-file">Select a video file:</label>
-                <input type="file" id="video-file" accept="video/*">
-            </form>
-            
-            <script>
-                const input = document.querySelector('#video-file');
-                const cl_vid = document.querySelector('#client');
-                
-                input.addEventListener('change', () => {
-                    const file = input.files[0];
-                    const url = URL.createObjectURL(file);
-                    cl_vid.src = url;
-                });
-            </script>
-        </div>
-        <div class="video-box">
-            <h3 class="video-title">Instructor</h3>
-            <video id="instructor" controls></video>
-            
-            <form>
-                <label for="video-select">Select a video:</label>
-                <select id="video-select">
-                    <option value="video1.mp4">Video 1</option>
-                    <option value="video2.mp4">Video 2</option>
-                    <option value="video3.mp4">Video 3</option>
-                </select>
-            </form>
-            
-            <script>
-                const select = document.querySelector('#video-select');
-                const i_vid = document.querySelector('#instructor');
-                
-                select.addEventListener('change', () => {
-                    i_vid.src = select.value;
-                });
-            </script>
-            
-        </div>
-    </div>
-
-   
 </div>
 
 </body>
