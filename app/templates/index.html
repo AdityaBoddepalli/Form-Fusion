@@ -29,6 +29,7 @@
         <div class="container">
             <div id="abt">
                 <div class="inner-container">
+                    <img src="">
                     <h1>About</h1>
                     <p class="text">
                         Starting the journey of personal improvement can be a difficult task whether it is improving one's stretching form, lifting form, throwing form, ballet form, etc.
@@ -98,6 +99,26 @@
                                         </fieldset>
                                     -->
                                     <input type="submit" value="Submit">
+                                    <script>
+                                        const form = document.querySelector("form");
+                                        const checkboxes = document.querySelectorAll("input[type='checkbox']");
+                                        
+                                        form.addEventListener("submit", function(event) {
+                                            let atLeastOneChecked = false;
+                                            
+                                            for (let i = 0; i < checkboxes.length; i++) {
+                                                if (checkboxes[i].checked) {
+                                                    atLeastOneChecked = true;
+                                                    break;
+                                                }
+                                            }
+                                            
+                                            if (!atLeastOneChecked) {
+                                                alert("Please select at least one option.");
+                                                event.preventDefault();
+                                            }
+                                        });
+                                    </script>
                                 </form>
                             </div>
                         </div>
