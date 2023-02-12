@@ -88,8 +88,8 @@ body {
   background-size: 55%;
   overflow: hidden;
   padding:100px 0;
-  background-color: lavender;
-  /*background: linear-gradient(to bottom, lavender, ghostwhite) ;*/
+  /*background-color: lavender;*/
+  background: linear-gradient(to bottom, lavender, ghostwhite) ;
 }
 
 .inner-container{
