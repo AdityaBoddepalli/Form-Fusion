@@ -8,7 +8,6 @@ html {
 
 body {
   margin: 0px;
-  background-color:#c0c0c0;
 }
 
 #logo {
@@ -78,10 +77,19 @@ body {
   transition: all 0.3s ease-out;
 }
 
-#abt{
+.container{
+  display: flex;
+  flex-direction: column;
+  height: 200vh;
+}
+
+
+.abt{
   background-size: 55%;
   overflow: hidden;
   padding:100px 0;
+  background-color: lavender;
+  /*background: linear-gradient(to bottom, lavender, ghostwhite) ;*/
 }
 
 .inner-container{
@@ -104,7 +112,7 @@ body {
   margin-bottom: 40px;
 }
 
-#tryit{
+.tryit{
   border: 10px black ;
   margin: 20px;
   text-align: center;
@@ -127,8 +135,14 @@ body {
 
 video {
   width: 100%;
-  margin-left: 5%;
-  margin-right: 5%;
 }
 
+.videoContainer video
+{
+  max-width: 100%;
+  max-height: 100%;
+}
 
+.upload{
+  background-color:ghostwhite;
+}
