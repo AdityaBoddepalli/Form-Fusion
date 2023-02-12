@@ -29,7 +29,7 @@
         <div class="container">
             <div id="abt">
                 <div class="inner-container">
-                    <h1>About Us</h1>
+                    <h1>About</h1>
                     <p class="text">
                         Starting the journey of personal improvement can be a difficult task whether it is improving one's stretching form, lifting form, throwing form, ballet form, etc.
                         We all have various activities where simply having a guide could greatly improve the efficiency of our training, so our goal with FormFusion was to provide an easy to use application that gives feedback on the users form.
@@ -38,7 +38,6 @@
                         This allows for quick feedback for the user to then redo the activity and apply the given feedback, increasing the efficiency of their training.
                         The user will also be able to move to different points in each video and visually compare the differences between forms for a specific area in the activity where they might be unsure of what change to make.
                         We hope that through this software those that need guidance but may not have the time or resources to employ a personal trainer or coach for their activity can still have access to feedback so they don't have to blindly try and improve at their hobby.
-                         
                     </p>
                 </div>
             </div>
@@ -60,8 +59,9 @@
                             <div id="popup-content">
                                 <span id="close-button">&times;</span>
                                 <form action="">
-                                    <input type="file" accept="video/*">
-                                    <br><br>
+                                    <p>Your Video</p><input type="file" accept="video/*" required><br>
+                                    <p>Comparison Video</p><input type="file" accept="video/*" required>
+                                    <br><p>Select Points of Interest</p>
                                     <input type="checkbox" id="joint1" name="shoulderLeft" value="shoulderLeft">
                                     <label for="joint1"> Left Shoulder</label><br>
                                     <input type="checkbox" id="joint2" name="shoulderRight" value="shoulderRight">
@@ -82,21 +82,22 @@
                                     <label for="joint9"> Left Ankle</label><br>
                                     <input type="checkbox" id="joint10" name="AnkleRight" value="AnkleRight">
                                     <label for="joint10"> Right Ankle</label><br>
-                                    <fieldset>
-                                        <div class="form-group">
-                                            <h3>Select one option:</h3>
-                                            <div class="checkbox-group">
-                                                <input type="checkbox" id="option1" name="option" value="option1" onclick="uncheckOthers(this)">
-                                                <label for="option1">Push-ups</label>
-                                                <input type="checkbox" id="option2" name="option" value="option2" onclick="uncheckOthers(this)">
-                                                <label for="option2">Pull-ups</label>
-                                                <input type="checkbox" id="option3" name="option" value="option3" onclick="uncheckOthers(this)">
-                                                <label for="option3">Squats</label>
+                                    <!--
+                                        <fieldset>
+                                            <div class="form-group">
+                                                <h3>Select one option:</h3>
+                                                <div class="checkbox-group">
+                                                    <input type="checkbox" id="option1" name="option" value="option1" onclick="uncheckOthers(this)">
+                                                    <label for="option1">Push-ups</label>
+                                                    <input type="checkbox" id="option2" name="option" value="option2" onclick="uncheckOthers(this)">
+                                                    <label for="option2">Pull-ups</label>
+                                                    <input type="checkbox" id="option3" name="option" value="option3" onclick="uncheckOthers(this)">
+                                                    <label for="option3">Squats</label>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </fieldset>
+                                        </fieldset>
+                                    -->
                                     <input type="submit" value="Submit">
-                                    
                                 </form>
                             </div>
                         </div>
@@ -170,14 +171,16 @@
                     popup.style.display = "none";
                 }
             });
-            function uncheckOthers(checkbox) {
-                const checkboxes = document.getElementsByName("option");
-                for (const otherCheckbox of checkboxes) {
-                    if (otherCheckbox !== checkbox) {
-                        otherCheckbox.checked = false;
+            <!--
+                function uncheckOthers(checkbox) {
+                    const checkboxes = document.getElementsByName("option");
+                    for (const otherCheckbox of checkboxes) {
+                        if (otherCheckbox !== checkbox) {
+                            otherCheckbox.checked = false;
+                        }
                     }
                 }
-            }
+            -->
         </script>
     </body>
     </html>
