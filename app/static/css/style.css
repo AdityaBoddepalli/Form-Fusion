@@ -67,6 +67,7 @@ body {
 
 .topnav ul li a:hover {
   background-color: #00CED1;
+  border-radius: 15px;
 }
 .topnav ul li a {
   margin: 8px;
@@ -135,18 +136,19 @@ video {
 .container{
   display: flex;
   flex-direction: column;
-  height: 180vh;
+  height: 210vh;
 }
 
-.abt{
+#abt{
   background-size: 55%;
+  height: 100vh;
   overflow: hidden;
   padding:100px 0;
   /*background-color: lavender;*/
   background: linear-gradient(to bottom, rgb(175,166,214), #e8e8e8);
 }
 
-.upload{
+#upload{
   background-color:#e8e8e8;
 }
 
