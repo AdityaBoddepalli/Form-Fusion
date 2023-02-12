@@ -42,62 +42,44 @@
                     </p>
                 </div>
             </div>
-            
             <div id="upload">
                 <div class="tryit">
                     <h1>
                         Try It
                     </h1>
                 </div>
-                
                 <div class="video-container">
                     <div class="video-box">
                         <h3 class="video-title">You</h3>
-                        <video id="client" controls></video>
-                        
+                        <video id="client" controls></video>   
                         <button id="popup-button">Open Pop-up</button>
                         <div id="popup" style="display: none;">
                             <div id="popup-content">
                                 <span id="close-button">&times;</span>
-                                <form action="">
+                                <form action="/form">
                                     <p>Your Video</p><input type="file" accept="video/*" required><br>
                                     <p>Comparison Video</p><input type="file" accept="video/*" required>
                                     <br><p>Select Points of Interest</p>
-                                    <input type="checkbox" id="joint1" name="shoulderLeft" value="shoulderLeft">
+                                    <input type="checkbox" id="joint1" name="1" value="shoulderLeft">
                                     <label for="joint1"> Left Shoulder</label><br>
-                                    <input type="checkbox" id="joint2" name="shoulderRight" value="shoulderRight">
+                                    <input type="checkbox" id="joint2" name="2" value="shoulderRight">
                                     <label for="joint2"> Right Shoulder</label><br>
-                                    <input type="checkbox" id="joint3" name="ElbowLeft" value="ElbowLeft">
+                                    <input type="checkbox" id="joint3" name="3" value="ElbowLeft">
                                     <label for="joint3"> Left Elbow</label><br>
-                                    <input type="checkbox" id="joint4" name="ElbowRight" value="ElbowRight">
+                                    <input type="checkbox" id="joint4" name="4" value="ElbowRight">
                                     <label for="joint4"> Right Elbow</label><br>
-                                    <input type="checkbox" id="joint5" name="HipLeft" value="HipLeft">
+                                    <input type="checkbox" id="joint5" name="5" value="HipLeft">
                                     <label for="joint5"> Left Hip</label><br>
-                                    <input type="checkbox" id="joint6" name="HipRight" value="HipRight">
+                                    <input type="checkbox" id="joint6" name="6" value="HipRight">
                                     <label for="joint6"> Right Hip</label><br>
-                                    <input type="checkbox" id="joint7" name="KneeLeft" value="KneeLeft">
+                                    <input type="checkbox" id="joint7" name="7" value="KneeLeft">
                                     <label for="joint7"> Left Knee</label><br>
-                                    <input type="checkbox" id="joint8" name="KneeRight" value="KneeRight">
+                                    <input type="checkbox" id="joint8" name="8" value="KneeRight">
                                     <label for="joint8"> Right Knee</label><br>
-                                    <input type="checkbox" id="joint9" name="AnkleLeft" value="AnkleLeft">
+                                    <input type="checkbox" id="joint9" name="9" value="AnkleLeft">
                                     <label for="joint9"> Left Ankle</label><br>
-                                    <input type="checkbox" id="joint10" name="AnkleRight" value="AnkleRight">
+                                    <input type="checkbox" id="joint10" name="10" value="AnkleRight">
                                     <label for="joint10"> Right Ankle</label><br>
-                                    <!--
-                                        <fieldset>
-                                            <div class="form-group">
-                                                <h3>Select one option:</h3>
-                                                <div class="checkbox-group">
-                                                    <input type="checkbox" id="option1" name="option" value="option1" onclick="uncheckOthers(this)">
-                                                    <label for="option1">Push-ups</label>
-                                                    <input type="checkbox" id="option2" name="option" value="option2" onclick="uncheckOthers(this)">
-                                                    <label for="option2">Pull-ups</label>
-                                                    <input type="checkbox" id="option3" name="option" value="option3" onclick="uncheckOthers(this)">
-                                                    <label for="option3">Squats</label>
-                                                </div>
-                                            </div>
-                                        </fieldset>
-                                    -->
                                     <input type="submit" value="Submit">
                                     <script>
                                         const form = document.querySelector("form");
@@ -205,4 +187,3 @@
         </script>
     </body>
     </html>
-    
