@@ -110,27 +110,22 @@ body {
   text-align: center;
 }
 
-#vids{
-  display: inline;
+.video-container {
+  display: flex;
+  justify-content: space-between;
 }
 
-#left_vid{
-  float: left;
+.video-box {
+  width: 45%;
+  text-align: center;
 }
 
-#right_vid{
-  float: right;
+.video-title {
+  margin-bottom: 10px;
 }
 
-#client_vid{
-  float: left;
-  margin: 5%;
+video {
+  width: 100%;
 }
-
-#instr_vid{
-  float: right;
-  margin: 5%;
-}
-
 
 
