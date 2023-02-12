@@ -46,7 +46,7 @@ body {
   display: flex;
   justify-content: center;
   /*background-color: #B0E0E6;*/
-  background: linear-gradient(to right, #4C4C4C, #999, #4C4C4C);
+  background: linear-gradient(to bottom right, #888888, #eaeaea, #888888);
   align-items: center;
 }
 
