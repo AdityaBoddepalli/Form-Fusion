@@ -10,9 +10,9 @@
 </head>
 <body>
     <div class="landing">
-            <h1 class="welcome">
-                Welcome to <p>FormFusion</p>
-            </h1>
+        <h1 class="welcome">
+            Welcome to <p>FormFusion</p>
+        </h1>
         <nav>
             <div class="topnav">
                 <ul>
@@ -31,72 +31,70 @@
             <p class="text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus velit ducimus, enim inventore earum, eligendi nostrum pariatur necessitatibus eius dicta a voluptates sit deleniti autem error eos totam nisi neque voluptates sit deleniti autem error eos totam nisi neque.
             </p>
-            <div class="skills">
-                <span>Web Design</span>
-                <span>Photoshop & Illustrator</span>
-                <span>Coding</span>
-            </div>
         </div>
     </div>
     
-    <div id="try_it">
-        <h2 id="tag_try_it">
+    <div id="tryit">
+        <h1>
             Try It
-        </h2>
+        </h1>
+    </div>
+    
         <h2 id="left_vid">
             You
         </h2>
+
         <h2 id="right_vid">
             Instructor
         </h2>
+    
+    <div id="vids">
         <div id="client_vid">
-              
-              <video width="400" height="300" id="client" controls></video>
-
-              <form>
+            
+            <video width="400" height="300" id="client" controls></video>
+            
+            <form>
                 <label for="video-file">Select a video file:</label>
                 <input type="file" id="video-file" accept="video/*">
-              </form>
-              
-              <script>
+            </form>
+            
+            <script>
                 const input = document.querySelector('#video-file');
                 const cl_vid = document.querySelector('#client');
-              
+                
                 input.addEventListener('change', () => {
-                  const file = input.files[0];
-                  const url = URL.createObjectURL(file);
-                  cl_vid.src = url;
+                    const file = input.files[0];
+                    const url = URL.createObjectURL(file);
+                    cl_vid.src = url;
                 });
-              </script>
+            </script>
         </div>
         
-        </div>
-        <div id="instr_vid">
-            <form>
-              <video width=400 height=300 id="instructor" controls></video>
-
-              <label for="video-select">Select a video:</label>
-                <select id="video-select">
-                  <option value="video1.mp4">Video 1</option>
-                  <option value="video2.mp4">Video 2</option>
-                  <option value="video3.mp4">Video 3</option>
-                </select>
-              </form>
-              
-              <script>
-                const select = document.querySelector('#video-select');
-                const i_vid = document.querySelector('#instructor');
-              
-                select.addEventListener('change', () => {
-                  i_vid.src = select.value;
-                });
-              </script>
-
-        </div>
-        <h2 id="explanation">
-            Import your video
-        </h2>
     </div>
-    
+
+    <div id="instr_vid">
+        <video width=400 height=300 id="instructor" controls></video>
+        <form>
+            <label for="video-select">Select a video:</label>
+            <select id="video-select">
+                <option value="video1.mp4">Video 1</option>
+                <option value="video2.mp4">Video 2</option>
+                <option value="video3.mp4">Video 3</option>
+            </select>
+        </form>
+        
+        <script>
+            const select = document.querySelector('#video-select');
+            const i_vid = document.querySelector('#instructor');
+            
+            select.addEventListener('change', () => {
+                i_vid.src = select.value;
+            });
+        </script>
+        
+        
+    </div>
+</div>
+
 </body>
 </html>
