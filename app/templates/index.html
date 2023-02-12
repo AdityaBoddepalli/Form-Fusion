@@ -75,7 +75,21 @@
                                     <label for="joint9"> Left Ankle</label><br>
                                     <input type="checkbox" id="joint10" name="AnkleRight" value="AnkleRight">
                                     <label for="joint10"> Right Ankle</label><br>
-                                    <input type="submit" value="Upload Video">
+                                    <fieldset>
+                                        <div class="form-group">
+                                            <h3>Select one option:</h3>
+                                            <div class="checkbox-group">
+                                                <input type="checkbox" id="option1" name="option" value="option1" onclick="uncheckOthers(this)">
+                                                <label for="option1">Push-ups</label>
+                                                <input type="checkbox" id="option2" name="option" value="option2" onclick="uncheckOthers(this)">
+                                                <label for="option2">Pull-ups</label>
+                                                <input type="checkbox" id="option3" name="option" value="option3" onclick="uncheckOthers(this)">
+                                                <label for="option3">Squats</label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <input type="submit" value="Submit">
+                                    
                                 </form>
                             </div>
                         </div>
@@ -149,6 +163,14 @@
                     popup.style.display = "none";
                 }
             });
+            function uncheckOthers(checkbox) {
+                const checkboxes = document.getElementsByName("option");
+                for (const otherCheckbox of checkboxes) {
+                    if (otherCheckbox !== checkbox) {
+                        otherCheckbox.checked = false;
+                    }
+                }
+            }
         </script>
     </body>
     </html>
