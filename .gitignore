@@ -1,3 +1,5 @@
 *.pyc
 *~
 *.swp
+
+/form-fusion-ml/secrets.json
