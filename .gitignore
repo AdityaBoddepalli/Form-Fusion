@@ -3,3 +3,5 @@
 *.swp
 
 /form-fusion-ml/secrets.json
+*.pyc
+app/__pycache__/views.cpython-39.pyc
