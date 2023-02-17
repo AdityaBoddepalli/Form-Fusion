@@ -57,7 +57,7 @@ def form_handler():
         s3.upload_file(f'./app/static/uploads/{filename1}', 'formfusion', 'video.mp4')
         s3.upload_file(f'./app/static/uploads/{filename2}', 'formfusion', 'pro_video.mp4')
 
-        url = 'https://6df4-2600-1000-b01e-5091-dc3f-30cd-9218-358e.ngrok.io/formfusion'
+        url = app.config['NG_ENDPOINT']
 
         selected_joints = []
         joints = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
@@ -66,8 +66,6 @@ def form_handler():
            if request.form.get(i) is not None:
             selected_joints.append(int(request.form.get(i)))
 
-        print(selected_joints)
-
         response = requests.post(url, json={'numbers': selected_joints})
         print(selected_joints)
         print(response.status_code)
@@ -75,7 +73,13 @@ def form_handler():
 
         time.sleep(15)
 
-        s3.download_file('formfusion', 'annotated_video.mp4', './app/static/images/annotated_video.mp4')
-        s3.download_file('formfusion', 'annotated_pro_video.mp4', './app/static/images/annotated_pro_video.mp4')
+        download1_filepath = './app/static/downloads/annotated_video.mp4'
+        download2_filepath = './app/static/downloads/annotated_pro_video.mp4'
+
+        s3.download_file('formfusion', 'annotated_video.mp4', download1_filepath)
+        s3.download_file('formfusion', 'annotated_pro_video.mp4', download2_filepath)
+
+        response_data = response.json()
+        message = response_data['msg']
 
     return render_template('index.html')

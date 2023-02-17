@@ -148,16 +148,26 @@
         <div class="video-container left">
             <h2>Your Movement</h2>
             <div class="video-player">
-                <video controls></video>
+                <video controls>
+                    <source src="static/downloads/annotated_video.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
         <div class="video-container right">
             <h2>Expert's Movement</h2>
             <div class="video-player">
-                <video controls></video>
+                <video controls>
+                    <source src="static/downloads/annotated_pro_video.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
     </div>
+    <article class="output-data">
+        <h2>Analysis Results</h2>
+        <p>
+            {{ message }}
+        </p>
+    </article>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 </html>
