@@ -3,3 +3,4 @@
 *.swp
 
 /form-fusion-ml/secrets.json
+app/*.pyc
