@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FormFusion</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Ropa+Sans:ital@1&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="landing-container">
+        <div class="welcome-container">
+            <h1 class="welcome">
+                Welcome to <p>FormFusion</p>
+            </h1>
+        </div>
+        <div id="logo">
+            <img src="../static/img/logo1.png" alt="logo" width="175" height="175">
+        </div>
+        <nav>
+            <div class="topnav">
+                <ul>
+                    <li><a id="sec-1" href="#image">About</a></li>
+                    <li><a id="sec-2" href="#abt">Tech</a></li>
+                    <li><a id="sec-2" href="#abt">Try it</a></li>
+                </ul>
+                <hr>
+            </div>
+        </nav>
+    </div>
+    <article class="about-section">
+        <h2>About Us</h2>
+        <p>
+            Starting the journey of personal improvement can be a difficult task whether it is improving one's
+            stretching form, lifting form, throwing form, ballet form, etc.
+            We all have various activities where simply having a guide could greatly improve the efficiency of our
+            training, so our goal with FormFusion was to provide an easy to use application that gives feedback on the
+            users form.
+            FormFusion takes in the users personal video and any professional reference video and compares the user's
+            form against the professional's.
+            It then returns feedback about areas where the user's form diverges from the professional's.
+            This allows for quick feedback for the user to then redo the activity and apply the given feedback,
+            increasing the efficiency of their training.
+            The user will also be able to move to different points in each video and visually compare the differences
+            between forms for a specific area in the activity where they might be unsure of what change to make.
+            We hope that through this software those that need guidance but may not have the time or resources to employ
+            a personal trainer or coach for their activity can still have access to feedback so they don't have to
+            blindly try and improve at their hobby.
+        </p>
+    </article>
+    <article>
+        <h2>What We Used</h2>
+        <div class="tech-section">
+            <p>
+                FormFusion’s primary functionality is achieved through OpenCV and Google’s MediaPipe framework.
+                These tools make for a capable AI-empowered API that works by analyzing a video file uploaded to
+                an S3 bucket, and overlaying 33 landmark points onto the video’s subject. This enables an effective
+                visualization of joint angles with which to analyze and determine the quality of your form! 
+                See our GitHub repository <b>here.</b>
+            </p>
+            <table>
+                <tr>
+                    <th>
+                        <img src="../static/img/mediapipe.webp" alt="mediapipe logo" width="200" height="200">
+                    </th>
+                    <th>
+                        <img src="../static/img/open_cv.png" alt="open-cv logo" width="160" height="150">
+                    </th>
+                    <th>
+                        <img src="../static/img/s3.png" alt="aws-s3 logo" width="180" height="180">
+                    </th>
+                </tr>
+            </table>
+        </div>
+    </article>
+    <article class="demo">
+        <h2>Try it out!</h2>
+        <p>
+            Below you will find a quick form to complete! FormFusion works best by providing a video
+            of your movement to compare against an expert-led video of the same movement. This way,
+            you can better observe what to work on. First, select your video file and the expert-completed video file.
+            Then, choose the appropriate joints to include in the analysis in the checklist that follows.
+            Generally, categorize your exercise as upper-body or lower-body, and choose relevant joints.
+            For example, if choosing a pull-up to analyze, you’d want upper-body joins such as the elbows and shoulders!
+        </p>
+    </article>
+    <div class="video-form">
+        <form action="/form" method="POST" enctype="multipart/form-data" >
+            <label for="video1">Upload personal video:</label>
+            <input type="file" id="left-video" name="video1" required>
+            <label for="video2">Upload professional video:</label>
+            <input type="file" id="right-video" name="video2" required>
+            <div class="checkbox-group">
+                <input type="checkbox" id="joint1" name="1" value="1">
+                <label for="joint1"> Left Shoulder</label>
+                <input type="checkbox" id="joint2" name="2" value="2">
+                <label for="joint2"> Right Shoulder</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="joint3" name="3" value="3">
+                <label for="joint3"> Left Elbow</label>
+                <input type="checkbox" id="joint4" name="4" value="4">
+                <label for="joint4"> Right Elbow</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="joint5" name="5" value="5">
+                <label for="joint5"> Left Hip</label>
+                <input type="checkbox" id="joint6" name="6" value="6">
+                <label for="joint6"> Right Hip</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="joint7" name="7" value="7">
+                <label for="joint7"> Left Knee</label>
+                <input type="checkbox" id="joint8" name="8" value="8">
+                <label for="joint8"> Right Knee</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="joint9" name="9" value="9">
+                <label for="joint9"> Left Ankle</label>
+                <input type="checkbox" id="joint10" name="10" value="10">
+                <label for="joint10"> Right Ankle</label>
+            </div>
+            <button type="submit">FormFusion!</button>
+            <script>
+                const form = document.querySelector("form");
+                const checkboxes = document.querySelectorAll("input[type='checkbox']");
+
+                form.addEventListener("submit", function (event) {
+                    let atLeastOneChecked = false;
+
+                    for (let i = 0; i < checkboxes.length; i++) {
+                        if (checkboxes[i].checked) {
+                            atLeastOneChecked = true;
+                            break;
+                        }
+                    }
+
+                    if (!atLeastOneChecked) {
+                        alert("Please select at least one option.");
+                        event.preventDefault();
+                    }
+                });
+            </script>
+        </form>
+    </div>
+    <div class="video-section">
+        <div class="video-container left">
+            <h2>Your Movement</h2>
+            <div class="video-player">
+                <video controls></video>
+            </div>
+        </div>
+        <div class="video-container right">
+            <h2>Expert's Movement</h2>
+            <div class="video-player">
+                <video controls></video>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>
