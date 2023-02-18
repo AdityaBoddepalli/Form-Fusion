@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>FormFusion</title>
     <meta charset="UTF-8">
@@ -8,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Ropa+Sans:ital@1&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="landing-container">
         <div class="welcome-container">
@@ -21,43 +23,39 @@
         <nav>
             <div class="topnav">
                 <ul>
-                    <li><a id="sec-1" href="#image">About</a></li>
-                    <li><a id="sec-2" href="#abt">Tech</a></li>
-                    <li><a id="sec-2" href="#abt">Try it</a></li>
+                    <li><a id="sec-1" href="#abt">About</a></li>
+                    <li><a id="sec-2" href="#tech">Tech</a></li>
+                    <li><a id="sec-2" href="#demo">Try it</a></li>
                 </ul>
                 <hr>
             </div>
         </nav>
     </div>
-    <article class="about-section">
+    <article class="about-section" id="abt">
         <h2>About Us</h2>
         <p>
-            Starting the journey of personal improvement can be a difficult task whether it is improving one's
-            stretching form, lifting form, throwing form, ballet form, etc.
-            We all have various activities where simply having a guide could greatly improve the efficiency of our
-            training, so our goal with FormFusion was to provide an easy to use application that gives feedback on the
-            users form.
-            FormFusion takes in the users personal video and any professional reference video and compares the user's
-            form against the professional's.
-            It then returns feedback about areas where the user's form diverges from the professional's.
-            This allows for quick feedback for the user to then redo the activity and apply the given feedback,
-            increasing the efficiency of their training.
-            The user will also be able to move to different points in each video and visually compare the differences
-            between forms for a specific area in the activity where they might be unsure of what change to make.
+            Starting the journey of personal improvement can be a difficult and inimidating task! We know the feeling-
+            you walk into the gym with a new fitness goal in mind, only to realize you aren't sure how to perform an
+            exercise properly. Or maybe you're an experienced athlete looking to reach that next level of training.
+            Whatever the case, look no further than <b>FormFusion!</b>
+
+            FormFusion is a handy tool that accepts user-uploaded videos to analyze their movement via vector angles,
+            comparing them to a chosen "expert" in order to determine how they can improve their form.
+
             We hope that through this software those that need guidance but may not have the time or resources to employ
-            a personal trainer or coach for their activity can still have access to feedback so they don't have to
-            blindly try and improve at their hobby.
+            a personal trainer or coach for their activity can still receive feedback so they don't need to make
+            any guesses!
         </p>
     </article>
     <article>
-        <h2>What We Used</h2>
+        <h2 id="tech">What We Used</h2>
         <div class="tech-section">
             <p>
                 FormFusion’s primary functionality is achieved through OpenCV and Google’s MediaPipe framework.
                 These tools make for a capable AI-empowered API that works by analyzing a video file uploaded to
                 an S3 bucket, and overlaying 33 landmark points onto the video’s subject. This enables an effective
-                visualization of joint angles with which to analyze and determine the quality of your form! 
-                See our GitHub repository <b>here.</b>
+                visualization of joint angles with which to analyze and determine the quality of your form!
+                See our GitHub repository <a href="https://github.com/Tony-Stark93/Form-Fusion">here</a>.
             </p>
             <table>
                 <tr>
@@ -74,7 +72,7 @@
             </table>
         </div>
     </article>
-    <article class="demo">
+    <article class="demo" id="demo">
         <h2>Try it out!</h2>
         <p>
             Below you will find a quick form to complete! FormFusion works best by providing a video
@@ -86,7 +84,7 @@
         </p>
     </article>
     <div class="video-form">
-        <form action="/form" method="POST" enctype="multipart/form-data" >
+        <form action="/form" method="POST" enctype="multipart/form-data">
             <label for="video1">Upload personal video:</label>
             <input type="file" id="left-video" name="video1" required>
             <label for="video2">Upload professional video:</label>
@@ -148,7 +146,7 @@
         <div class="video-container left">
             <h2>Your Movement</h2>
             <div class="video-player">
-                <video controls>
+                <video controls autoplay>
                     <source src="static/downloads/annotated_video.mp4" type="video/mp4">
                 </video>
             </div>
@@ -156,7 +154,7 @@
         <div class="video-container right">
             <h2>Expert's Movement</h2>
             <div class="video-player">
-                <video controls>
+                <video controls autoplay>
                     <source src="static/downloads/annotated_pro_video.mp4" type="video/mp4">
                 </video>
             </div>

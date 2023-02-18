@@ -71,8 +71,6 @@ def form_handler():
         print(response.status_code)
         assert response.status_code == 200
 
-        time.sleep(15)
-
         download1_filepath = './app/static/downloads/annotated_video.mp4'
         download2_filepath = './app/static/downloads/annotated_pro_video.mp4'
 
@@ -82,4 +80,4 @@ def form_handler():
         response_data = response.json()
         message = response_data['msg']
 
-    return render_template('index.html')
+    return render_template('index.html', message=message)
