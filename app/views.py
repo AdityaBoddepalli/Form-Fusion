@@ -48,8 +48,8 @@ def form_handler():
             print("Videos have been saved successfully.")
 
         session = boto3.Session(
-            aws_access_key_id=app.config['AWS_ACCESS_KEY'],
-            aws_secret_access_key=app.config['AWS_SECRET_KEY'],
+            aws_access_key_id=app.config['ACCESS_KEY'],
+            aws_secret_access_key=app.config['SECRET_KEY'],
             region_name='us-east-1'
         )
 
@@ -57,7 +57,7 @@ def form_handler():
         s3.upload_file(f'./app/static/uploads/{filename1}', 'formfusion', 'video.mp4')
         s3.upload_file(f'./app/static/uploads/{filename2}', 'formfusion', 'pro_video.mp4')
 
-        url = app.config['NG_ENDPOINT']
+        url = app.config['ENDPOINT']
 
         selected_joints = []
         joints = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
