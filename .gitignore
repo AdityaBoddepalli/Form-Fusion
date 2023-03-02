@@ -4,3 +4,4 @@
 
 /form-fusion-ml/secrets.json
 app/*.pyc
+ebextensions/app.config

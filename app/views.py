@@ -4,11 +4,23 @@ from flask import render_template, request, redirect, url_for, jsonify
 
 from werkzeug.utils import secure_filename
 
-import requests, boto3, botocore, os, time
+import requests, boto3, os, shutil
 
 @app.route('/')
 def landing_page():
-    print('test')
+
+    folder_path = './app/static/downloads'
+
+    for filename in os.listdir(folder_path):
+        file_path = os.path.join(folder_path, filename)
+        try:
+            if os.path.isfile(file_path) or os.path.islink(file_path):
+                os.unlink(file_path)
+            elif os.path.isdir(file_path):
+                shutil.rmtree(file_path)
+        except Exception as e:
+            print('Failed to delete %s. Reason: %s' % (file_path, e))
+
     return render_template('index.html')
 
 def file_validator(filename):
@@ -45,11 +57,9 @@ def form_handler():
                 video1.save(os.path.join(app.config['VIDEO_UPLOADS'], filename1))
                 video2.save(os.path.join(app.config['VIDEO_UPLOADS'], filename2))
 
-            print("Videos have been saved successfully.")
-
         session = boto3.Session(
-            aws_access_key_id=app.config['ACCESS_KEY'],
-            aws_secret_access_key=app.config['SECRET_KEY'],
+            aws_access_key_id=app.config['AWS_ACCESS_KEY'],
+            aws_secret_access_key=app.config['AWS_SECRET_KEY'],
             region_name='us-east-1'
         )
 
@@ -67,8 +77,6 @@ def form_handler():
             selected_joints.append(int(request.form.get(i)))
 
         response = requests.post(url, json={'numbers': selected_joints})
-        print(selected_joints)
-        print(response.status_code)
         assert response.status_code == 200
 
         download1_filepath = './app/static/downloads/annotated_video.mp4'
